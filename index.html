@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title></title>
@@ -13,8 +13,10 @@
         .pawns{
             width:45px;
             height:45px;
-            border-radius:20px;
+            border-radius:200px;
             position:absolute;
+            border: 1px solid black;
+            align-content: center;
         }
         #board{
             background:url("board.jfif") no-repeat;
@@ -34,7 +36,6 @@
         footer{
             font-size:larger;
             color:darkred;
-
         }
     </style>
     <script src="Ludo-game.js"></script>
@@ -53,28 +54,28 @@
 
     <div id="dice" onclick="randomNum()" style="background-image:url(https://www.animatedimages.org/data/media/710/animated-dice-image-0005.gif);background-size:contain; width:50px;height:50px; float:left;"></div>
     <!-- red pawns  start top 28 left 318-->
-    <div class="pawns" id="redpawn1"    onclick="randomMove('red',1)"       style="background-color:red;top:149px;left:442px;"></div>
-    <div class="pawns" id="redpawn2"    onclick="randomMove('red',2)"       style="background-color:red;top:102px;left:395px;"></div>
-    <div class="pawns" id="redpawn3"    onclick="randomMove('red',3)"       style="background-color:red;top:55px;left:442px;"></div>
-    <div class="pawns" id="redpawn4"    onclick="randomMove('red',4)"       style="background-color:red;top:102px;left:490px;"></div>
+    <div class="pawns" id="redpawn1"    onclick="randomMove('red',1)"       style="background-color:red;top:517px;left:718px;"></div>
+    <div class="pawns" id="redpawn2"    onclick="randomMove('red',2)"       style="background-color:red;top:652px;left:720px;"></div>
+    <div class="pawns" id="redpawn3"    onclick="randomMove('red',3)"       style="background-color:red;top:517px;left:850px;"><div class="pawns" id="redpawn3inside" style=" width: 22px ; height: 22px ; position: relative ; margin: 10px ; background-color: red ;""></div></div>
+    <div class="pawns" id="redpawn4"    onclick="randomMove('red',4)"       style="background-color:red;top:646px;left:850px;"></div>
 
     <!-- yellow pawns  start top 523 left 218-->
-    <div class="pawns" id="yellowpawn1" onclick="randomMove('yellow',1)"    style="background-color:yellow;top:451px;left:47px;"></div>
-    <div class="pawns" id="yellowpawn2" onclick="randomMove('yellow',2)"    style="background-color:yellow;top:451px;left:140px;"></div>
-    <div class="pawns" id="yellowpawn3" onclick="randomMove('yellow',3)"    style="background-color:yellow;top:404px;left:93px;"></div>
-    <div class="pawns" id="yellowpawn4" onclick="randomMove('yellow',4)"    style="background-color:yellow;top:498px;left:93px;"></div>
+    <div class="pawns" id="yellowpawn1" onclick="randomMove('yellow',1)"    style="background-color:yellow;top:1122px;left:113px;"></div>
+    <div class="pawns" id="yellowpawn2" onclick="randomMove('yellow',2)"    style="background-color:yellow;top:1117px;left:243px;"></div>
+    <div class="pawns" id="yellowpawn3" onclick="randomMove('yellow',3)"    style="background-color:yellow;top:1252px;left:116px;"></div>
+    <div class="pawns" id="yellowpawn4" onclick="randomMove('yellow',4)"    style="background-color:yellow;top:1252px;left:243px;"></div>
 
     <!-- green pawns  start top 227 left 22-->
-    <div class="pawns" id="greenpawn1"  onclick="randomMove('green',1)"     style="background-color:green;top:149px;left:93px;"></div>
-    <div class="pawns" id="greenpawn2"  onclick="randomMove('green',2)"     style="background-color:green;top:102px;left:140px;"></div>
-    <div class="pawns" id="greenpawn3"  onclick="randomMove('green',3)"     style="background-color:green;top:55px;left:93px;"></div>
-    <div class="pawns" id="greenpawn4"  onclick="randomMove('green',4)"     style="background-color:green;top:102px;left:47px;"></div>
+    <div class="pawns" id="greenpawn1"  onclick="randomMove('green',1)"     style="background-color:green;top:517px;left:116px;"></div>
+    <div class="pawns" id="greenpawn2"  onclick="randomMove('green',2)"     style="background-color:green;top:517px;left:243px;"></div>
+    <div class="pawns" id="greenpawn3"  onclick="randomMove('green',3)"     style="background-color:green;top:650px;left:113px;"></div>
+    <div class="pawns" id="greenpawn4"  onclick="randomMove('green',4)"     style="background-color:green;top:650px;left:243px;"></div>
 
     <!-- blue pawns  start top 326 left 515-->
-    <div class="pawns" id="bluepawn1"   onclick="randomMove('blue',1)"      style="background-color:blue;top:451px;left:490px;"></div>
-    <div class="pawns" id="bluepawn2"   onclick="randomMove('blue',2)"      style="background-color:blue;top:451px;left:395px;"></div>
-    <div class="pawns" id="bluepawn3"   onclick="randomMove('blue',3)"      style="background-color:blue;top:404px;left:442px;"></div>
-    <div class="pawns" id="bluepawn4"   onclick="randomMove('blue',4)"      style="background-color:blue;top:498px;left:442px;"></div>
+    <div class="pawns" id="bluepawn1"   onclick="randomMove('blue',1)"      style="background-color:blue;top:517px;left:490px;"></div>
+    <div class="pawns" id="bluepawn2"   onclick="randomMove('blue',2)"      style="background-color:blue;top:517px;left:395px;"></div>
+    <div class="pawns" id="bluepawn3"   onclick="randomMove('blue',3)"      style="background-color:blue;top:652px;left:442px;"></div>
+    <div class="pawns" id="bluepawn4"   onclick="randomMove('blue',4)"      style="background-color:blue;top:652px;left:442px;"></div>
 
 
     <h4 id="uselesstext1">It`s </h4><h3 id="player" style="float:left; color:red">red</h3><h4 id="uselesstext2">s turn</h4>
@@ -84,7 +85,7 @@
     <script defer src="src/index.js" charset="utf-8"></script>
     <script>
         var currPos = 0;
-        var step = 49.5;
+        var step = 67.5;
         var currcolor = "";
         var NumOfPaw = "";
         var num = 0;
@@ -201,84 +202,84 @@
         }
         //Red pawns path
         pushSteps(stepDown,stepsRed,4);
-        pushSteps(stepRight, stepsRed,4);
+        pushSteps(stepRight, stepsRed,6);
         pushSteps(stepDown, stepsRed,2);
-        pushSteps(stepLeft, stepsRed,4);
-        pushSteps(stepDown, stepsRed,4);
+        pushSteps(stepLeft, stepsRed,5);
+        pushSteps(stepDown, stepsRed,6);
         pushSteps(stepLeft, stepsRed,2);
-        pushSteps(stepUp, stepsRed,4);
-        pushSteps(stepLeft, stepsRed,4);
+        pushSteps(stepUp, stepsRed,5);
+        pushSteps(stepLeft, stepsRed,6);
         pushSteps(stepUp, stepsRed,2);
-        pushSteps(stepRight, stepsRed,4);
-        pushSteps(stepUp, stepsRed,4);
+        pushSteps(stepRight, stepsRed,5);
+        pushSteps(stepUp, stepsRed,6);
         pushSteps(stepRight, stepsRed,1);
-        pushSteps(stepDown, stepsRed,5);
+        pushSteps(stepDown, stepsRed,6);
         //Yellow pawns path
 
         pushSteps(stepUp, stepsYellow,4);
-        pushSteps(stepLeft, stepsYellow,4);
+        pushSteps(stepLeft, stepsYellow,6);
         pushSteps(stepUp, stepsYellow,2);
-        pushSteps(stepRight, stepsYellow,4);
-        pushSteps(stepUp, stepsYellow,4);
+        pushSteps(stepRight, stepsYellow,5);
+        pushSteps(stepUp, stepsYellow,6);
         pushSteps(stepRight, stepsYellow,2);
-        pushSteps(stepDown, stepsYellow,4);
-        pushSteps(stepRight, stepsYellow,4);
+        pushSteps(stepDown, stepsYellow,5);
+        pushSteps(stepRight, stepsYellow,6);
         pushSteps(stepDown, stepsYellow,2);
-        pushSteps(stepLeft, stepsYellow,4);
-        pushSteps(stepDown, stepsYellow,4);
+        pushSteps(stepLeft, stepsYellow,5);
+        pushSteps(stepDown, stepsYellow,6);
         pushSteps(stepLeft, stepsYellow,1);
-        pushSteps(stepUp, stepsYellow,5);
+        pushSteps(stepUp, stepsYellow,6);
 
         //Blue pawns path
         pushSteps(stepLeft, stepsBlue,4);
-        pushSteps(stepDown, stepsBlue,4);
+        pushSteps(stepDown, stepsBlue,6);
         pushSteps(stepLeft, stepsBlue,2);
-        pushSteps(stepUp, stepsBlue,4,2);
-        pushSteps(stepLeft, stepsBlue,4);
+        pushSteps(stepUp, stepsBlue,5);
+        pushSteps(stepLeft, stepsBlue,6);
         pushSteps(stepUp, stepsBlue,2);
-        pushSteps(stepRight, stepsBlue,4);
-        pushSteps(stepUp, stepsBlue,4);
+        pushSteps(stepRight, stepsBlue,5);
+        pushSteps(stepUp, stepsBlue,6);
         pushSteps(stepRight, stepsBlue,2);
-        pushSteps(stepDown, stepsBlue,4);
-        pushSteps(stepRight, stepsBlue,4);
+        pushSteps(stepDown, stepsBlue,5);
+        pushSteps(stepRight, stepsBlue,6);
         pushSteps(stepDown, stepsBlue,1);
-        pushSteps(stepLeft, stepsBlue,5);
+        pushSteps(stepLeft, stepsBlue,6);
 
         //Green pawns path
         pushSteps(stepRight, stepsGreen,4);
-        pushSteps(stepUp, stepsGreen,4);
+        pushSteps(stepUp, stepsGreen,6);
         pushSteps(stepRight, stepsGreen,2);
-        pushSteps(stepDown, stepsGreen,4);
-        pushSteps(stepRight, stepsGreen,4);
+        pushSteps(stepDown, stepsGreen,5);
+        pushSteps(stepRight, stepsGreen,6);
         pushSteps(stepDown, stepsGreen,2);
-        pushSteps(stepLeft, stepsGreen,4);
-        pushSteps(stepDown, stepsGreen,4);
+        pushSteps(stepLeft, stepsGreen,5);
+        pushSteps(stepDown, stepsGreen,6);
         pushSteps(stepLeft, stepsGreen,2);
-        pushSteps(stepUp, stepsGreen,4);
-        pushSteps(stepLeft, stepsGreen,4);
+        pushSteps(stepUp, stepsGreen,5);
+        pushSteps(stepLeft, stepsGreen,6);
         pushSteps(stepUp, stepsGreen,1);
-        pushSteps(stepRight, stepsGreen, 5);
+        pushSteps(stepRight, stepsGreen, 6);
         function ResetPawn(victim) {
             onboard[victim] = 0;
             positions[victim] = 0;
             var pawnToMove = document.getElementById(victim);
             switch (victim) {
-                case "redpawn1": pawnToMove.style.top = 149 + "px"; pawnToMove.style.left = 442 + "px"; break;
-                case "redpawn2": pawnToMove.style.top = 102 + "px"; pawnToMove.style.left = 395 + "px"; break;
-                case "redpawn3": pawnToMove.style.top = 55 + "px"; pawnToMove.style.left = 442 + "px"; break;
-                case "redpawn4": pawnToMove.style.top = 102 + "px"; pawnToMove.style.left = 490 + "px"; break;
+                case "redpawn1": pawnToMove.style.top = 517 + "px"; pawnToMove.style.left = 718 + "px"; break;
+                case "redpawn2": pawnToMove.style.top = 652 + "px"; pawnToMove.style.left = 720 + "px"; break;
+                case "redpawn3": pawnToMove.style.top = 517 + "px"; pawnToMove.style.left = 850 + "px"; break;
+                case "redpawn4": pawnToMove.style.top = 646 + "px"; pawnToMove.style.left = 850 + "px"; break;
                 case "bluepawn1": pawnToMove.style.top = 451 + "px"; pawnToMove.style.left = 490 + "px"; break;
                 case "bluepawn2": pawnToMove.style.top = 451 + "px"; pawnToMove.style.left = 395 + "px"; break;
-                case "bluepawn3": pawnToMove.style.top = 404 + "px"; pawnToMove.style.left = 442 + "px"; break;
-                case "bluepawn4": pawnToMove.style.top = 498 + "px"; pawnToMove.style.left = 442 + "px"; break;
+                case "bluepawn3": pawnToMove.style.top = 652 + "px"; pawnToMove.style.left = 442 + "px"; break;
+                case "bluepawn4": pawnToMove.style.top = 652 + "px"; pawnToMove.style.left = 442 + "px"; break;
                 case "greenpawn1": pawnToMove.style.top = 149 + "px"; pawnToMove.style.left = 93 + "px"; break;
                 case "greenpawn2": pawnToMove.style.top = 102 + "px"; pawnToMove.style.left = 140 + "px"; break;
                 case "greenpawn3": pawnToMove.style.top = 55 + "px"; pawnToMove.style.left = 93 + "px"; break;
                 case "greenpawn4": pawnToMove.style.top = 102 + "px"; pawnToMove.style.left = 47 + "px"; break;
                 case "yellowpawn1": pawnToMove.style.top = 451 + "px"; pawnToMove.style.left = 47 + "px"; break;
                 case "yellowpawn2": pawnToMove.style.top = 451 + "px"; pawnToMove.style.left = 140 + "px"; break;
-                case "yellowpawn3": pawnToMove.style.top = 404 + "px"; pawnToMove.style.left = 93 + "px"; break;
-                case "yellowpawn4": pawnToMove.style.top = 498 + "px"; pawnToMove.style.left = 93 + "px"; break;
+                case "yellowpawn3": pawnToMove.style.top = 652 + "px"; pawnToMove.style.left = 93 + "px"; break;
+                case "yellowpawn4": pawnToMove.style.top = 652 + "px"; pawnToMove.style.left = 93 + "px"; break;
 
             }
         }
@@ -315,8 +316,8 @@
                                 var curr = Number(doc.style.left.replace(/[a-z]/g, ''));
                                 switch (Color) {
                                     case "red":
-                                        doc.style.left = 318 + 'px';
-                                        doc.style.top = 28 + "px";
+                                        doc.style.left = 553 + 'px';
+                                        doc.style.top = 480 + "px";
                                         break;
 
                                     case "yellow":
