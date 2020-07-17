@@ -11,11 +11,165 @@
             background-color: #233c61
         }
         .pawns{
-            width:45px;
-            height:45px;
-            border-radius:200px;
+            width:60px;
+            height:94px;
+            z-index: 3;
+            border-radius:0px;
             position:absolute;
-            border: 1px solid black;
+            border: 0px solid white;
+            align-content: center;
+        }
+        .outsq{
+            width:354px;
+            height:355px;
+            background-color: #b97a56;
+            border-radius:0px;
+            position:absolute;
+            border: 2px solid #b97a56;
+            align-content: center;
+        }
+        .insq{
+            width:234px;
+            height:235px;
+            background-color: white;
+            border-radius:0px;
+            position:absolute;
+            border: 2px solid white;
+            align-content: center;
+        }
+        .circlepos{
+            width:56px;
+            height:55px;
+            background-color: #8b5c41;
+            border-radius:30px;
+            position:absolute;
+            border: 2px solid white;
+            align-content: center;
+        }
+        .outsq2{
+            width:354px;
+            height:355px;
+            background-color: #f85772;
+            border-radius:0px;
+            position:absolute;
+            border: 2px solid #f85772;
+            align-content: center;
+        }
+        .insq2{
+            width:234px;
+            height:235px;
+            background-color: white;
+            border-radius:0px;
+            position:absolute;
+            border: 2px solid white;
+            align-content: center;
+        }
+        .circlepos2{
+            width:56px;
+            height:55px;
+            background-color: #f85772;
+            border-radius:30px;
+            position:absolute;
+            border: 2px solid white;
+            align-content: center;
+        }
+        .outsq3{
+            width:354px;
+            height:358px;
+            background-color: rgb(189, 25, 189);
+            border-radius:0px;
+            position:absolute;
+            border: 2px solid rgb(189, 25, 189);
+            align-content: center;
+        }
+        .insq3{
+            width:234px;
+            height:235px;
+            background-color: white;
+            border-radius:0px;
+            position:absolute;
+            border: 2px solid white;
+            align-content: center;
+        }
+        .circlepos3{
+            width:56px;
+            height:55px;
+            background-color: rgb(189, 25, 189);
+            border-radius:30px;
+            position:absolute;
+            border: 2px solid white;
+            align-content: center;
+        }
+        .outsq4{
+            width:354px;
+            height:358px;
+            background-color: #4e4e4e;
+            border-radius:0px;
+            position:absolute;
+            border: 2px solid #4e4e4e;
+            align-content: center;
+        }
+        .insq4{
+            width:234px;
+            height:235px;
+            background-color: white;
+            border-radius:0px;
+            position:absolute;
+            border: 2px solid white;
+            align-content: center;
+        }
+        .circlepos4{
+            width:56px;
+            height:55px;
+            background-color: #4e4e4e;
+            border-radius:30px;
+            position:absolute;
+            border: 2px solid white;
+            align-content: center;
+        }
+        .ordbox1{
+            width:60px;
+            height:60px;
+            position:absolute;
+            background-color: white;
+            border-radius:0px;
+            border: 2px solid black;
+            align-content: center;
+        }
+        .brownbox{
+            width:60px;
+            height:60px;
+            position:absolute;
+            background-color: #b97a56;
+            border-radius:0px;
+            border: 2px solid black;
+            align-content: center;
+        }
+        .redbox{
+            width:60px;
+            height:60px;
+            position:absolute;
+            background-color: #f85772;
+            border-radius:0px;
+            border: 2px solid black;
+            align-content: center;
+        }
+        .purplebox{
+            width:60px;
+            height:60px;
+            position:absolute;
+            background-color: rgb(189, 25, 189);
+            border-radius:0px;
+            border: 2px solid black;
+            align-content: center;
+        }
+        .greybox{
+            width:60px;
+            height:60px;
+            position:absolute;
+            background-color: #4e4e4e;
+            border-radius:0px;
+            border: 2px solid black;
             align-content: center;
         }
         #board{
@@ -24,8 +178,8 @@
             -moz-background-size: cover;
             -o-background-size: cover;
             background-size:cover;
-            width: 1002px;
-            height:1333px;
+            width: 900px;
+            height:1200px;
             margin-top:400px;
         }
         #uselesstext1{
@@ -36,6 +190,23 @@
         footer{
             font-size:larger;
             color:darkred;
+        }
+        @keyframes chancehighlight {
+            0%  {    -webkit-filter: drop-shadow(0px 0px 5px black);
+                    filter: drop-shadow(0px 0px 5px black);
+                }
+            25%  {    -webkit-filter: drop-shadow(0px 0px 0px black);
+                    filter: drop-shadow(0px 0px 0px black);
+                }
+            50%  {    -webkit-filter: drop-shadow(0px 0px 5px black);
+                    filter: drop-shadow(0px 0px 5px black);
+                }
+            75%  {    -webkit-filter: drop-shadow(0px 0px 0px black);
+                    filter: drop-shadow(0px 0px 0px black);
+                }
+            100%  {    -webkit-filter: drop-shadow(0px 0px 5px black);
+                    filter: drop-shadow(0px 0px 5px black);
+                }
         }
     </style>
     <script src="Ludo-game.js"></script>
@@ -51,59 +222,225 @@
     <button type="button" id="green">Green</button>
     <button type="button" id="blue">Blue</button>
     <button type="button"  id="yellow">Yellow</button>-->
+    <audio id="myAudio">
+        <source src="notification.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
 
-    <div id="dice" onclick="randomNum()" style="background-image:url(https://www.animatedimages.org/data/media/710/animated-dice-image-0005.gif);background-size:contain; width:50px;height:50px; float:left;"></div>
+    <div id="dice" onclick="randomNum()" style="background-image:url(dice6.png);background-size:contain; width:150px;height:150px; float:left;"></div>
     <!-- red pawns  start top 28 left 318-->
-    <div class="pawns" id="redpawn1"    onclick="randomMove('red',1)"       style="background-color:red;top:517px;left:718px;"></div>
-    <div class="pawns" id="redpawn2"    onclick="randomMove('red',2)"       style="background-color:red;top:652px;left:720px;"></div>
-    <div class="pawns" id="redpawn3"    onclick="randomMove('red',3)"       style="background-color:red;top:517px;left:850px;"><div class="pawns" id="redpawn3inside" style=" width: 22px ; height: 22px ; position: relative ; margin: 10px ; background-color: red ;""></div></div>
-    <div class="pawns" id="redpawn4"    onclick="randomMove('red',4)"       style="background-color:red;top:646px;left:850px;"></div>
+    <div class="outsq" id="greenoutsq" style="top:569px;left:549px;"></div>
+    <div class="insq" id="greeninsq" style="top:629px;left:609px;"></div>
+    <div class="circlepos" id="greenpos" style="top:674px;left:653px;"></div>
+    <div class="circlepos" id="greenpos" style="top:764px;left:653px;"></div>
+    <div class="circlepos" id="greenpos" style="top:674px;left:743px;"></div>
+    <div class="circlepos" id="greenpos" style="top:764px;left:743px;"></div>
+    <div class="pawns" id="greenpawn1"    onclick="randomMove('green',1)"       style="top:635px;left:111px;"><img class="greenpikka" src="redpawn1.png" style="width: 60px;"></div></div>
+    <div class="pawns" id="greenpawn2"    onclick="randomMove('green',2)"       style="top:635px;left:201px;"><img class="greenpikka" src="redpawn1.png" style="width: 60px;"></div></div>
+    <div class="pawns" id="greenpawn3"    onclick="randomMove('green',3)"       style="top:725px;left:111px;"><img class="greenpikka" src="redpawn1.png" style="width: 60px;"></div></div>
+    <div class="pawns" id="greenpawn4"    onclick="randomMove('green',4)"       style="top:725px;left:201px;"><img class="greenpikka" src="redpawn1.png" style="width: 60px;"></div></div>
 
     <!-- yellow pawns  start top 523 left 218-->
-    <div class="pawns" id="yellowpawn1" onclick="randomMove('yellow',1)"    style="background-color:yellow;top:1122px;left:113px;"></div>
-    <div class="pawns" id="yellowpawn2" onclick="randomMove('yellow',2)"    style="background-color:yellow;top:1117px;left:243px;"></div>
-    <div class="pawns" id="yellowpawn3" onclick="randomMove('yellow',3)"    style="background-color:yellow;top:1252px;left:116px;"></div>
-    <div class="pawns" id="yellowpawn4" onclick="randomMove('yellow',4)"    style="background-color:yellow;top:1252px;left:243px;"></div>
+    <div class="outsq2" id="redoutsq" style="top:569px;left:9px;"></div>
+    <div class="insq2" id="redinsq" style="top:629px;left:69px;"></div>
+    <div class="circlepos2" id="redpos" style="top:674px;left:113px;"></div>
+    <div class="circlepos2" id="redpos" style="top:764px;left:113px;"></div>
+    <div class="circlepos2" id="redpos" style="top:674px;left:203px;"></div>
+    <div class="circlepos2" id="redpos" style="top:764px;left:203px;"></div>
+    <div class="pawns" id="redpawn1" onclick="randomMove('red',1)"    style="top:635px;left:652px;"><img class="redpikka" src="brownpawn1.png" style="width: 60px;"></div></div>
+    <div class="pawns" id="redpawn2" onclick="randomMove('red',2)"    style="top:635px;left:742px;"><img class="redpikka" src="brownpawn1.png" style="width: 60px;"></div></div>
+    <div class="pawns" id="redpawn3" onclick="randomMove('red',3)"    style="top:725px;left:652px;"><img class="redpikka" src="brownpawn1.png" style="width: 60px;"></div></div>
+    <div class="pawns" id="redpawn4" onclick="randomMove('red',4)"    style="top:725px;left:742px;"><img class="redpikka" src="brownpawn1.png" style="width: 60px;"></div></div>
 
     <!-- green pawns  start top 227 left 22-->
-    <div class="pawns" id="greenpawn1"  onclick="randomMove('green',1)"     style="background-color:green;top:517px;left:116px;"></div>
-    <div class="pawns" id="greenpawn2"  onclick="randomMove('green',2)"     style="background-color:green;top:517px;left:243px;"></div>
-    <div class="pawns" id="greenpawn3"  onclick="randomMove('green',3)"     style="background-color:green;top:650px;left:113px;"></div>
-    <div class="pawns" id="greenpawn4"  onclick="randomMove('green',4)"     style="background-color:green;top:650px;left:243px;"></div>
+    <div class="outsq3" id="yellowoutsq" style="top:1109px;left:9px;"></div>
+    <div class="insq3" id="yellowinsq" style="top:1169px;left:69px;"></div>
+    <div class="circlepos3" id="yellowpos" style="top:1217px;left:113px;"></div>
+    <div class="circlepos3" id="yellowpos" style="top:1307px;left:113px;"></div>
+    <div class="circlepos3" id="yellowpos" style="top:1217px;left:203px;"></div>
+    <div class="circlepos3" id="yellowpos" style="top:1307px;left:203px;"></div>
+    <div class="pawns" id="yellowpawn1"  onclick="randomMove('yellow',1)"     style="top:1178px;left:111px;"><img class="yellowpikka" src="violetpawn1.png" style="width: 60px;"></div></div>
+    <div class="pawns" id="yellowpawn2"  onclick="randomMove('yellow',2)"     style="top:1178px;left:201px;"><img class="yellowpikka" src="violetpawn1.png" style="width: 60px;"></div></div>
+    <div class="pawns" id="yellowpawn3"  onclick="randomMove('yellow',3)"     style="top:1268px;left:111px;"><img class="yellowpikka" src="violetpawn1.png" style="width: 60px;"></div></div>
+    <div class="pawns" id="yellowpawn4"  onclick="randomMove('yellow',4)"     style="top:1268px;left:201px;"><img class="yellowpikka" src="violetpawn1.png" style="width: 60px;"></div></div>
 
     <!-- blue pawns  start top 326 left 515-->
-    <div class="pawns" id="bluepawn1"   onclick="randomMove('blue',1)"      style="background-color:blue;top:517px;left:490px;"></div>
-    <div class="pawns" id="bluepawn2"   onclick="randomMove('blue',2)"      style="background-color:blue;top:517px;left:395px;"></div>
-    <div class="pawns" id="bluepawn3"   onclick="randomMove('blue',3)"      style="background-color:blue;top:652px;left:442px;"></div>
-    <div class="pawns" id="bluepawn4"   onclick="randomMove('blue',4)"      style="background-color:blue;top:652px;left:442px;"></div>
+    <div class="outsq4" id="blueoutsq" style="top:1109px;left:549px;"></div>
+    <div class="insq4" id="blueinsq" style="top:1169px;left:609px;"></div>
+    <div class="circlepos4" id="bluepos" style="top:1217px;left:653px;"></div>
+    <div class="circlepos4" id="bluepos" style="top:1307px;left:653px;"></div>
+    <div class="circlepos4" id="bluepos" style="top:1217px;left:743px;"></div>
+    <div class="circlepos4" id="bluepos" style="top:1307px;left:743px;"></div>
+    <div class="pawns" id="bluepawn1"   onclick="randomMove('blue',1)"      style="top:1178px;left:652px;"><img class="bluepikka" src="greypawn1.png" style="width: 60px;"></div></div>
+    <div class="pawns" id="bluepawn2"   onclick="randomMove('blue',2)"      style="top:1178px;left:742px;"><img class="bluepikka" src="greypawn1.png" style="width: 60px;"></div></div>
+    <div class="pawns" id="bluepawn3"   onclick="randomMove('blue',3)"      style="top:1268px;left:652px;"><img class="bluepikka" src="greypawn1.png" style="width: 60px;"></div></div>
+    <div class="pawns" id="bluepawn4"   onclick="randomMove('blue',4)"      style="top:1268px;left:742px;"><img class="bluepikka" src="greypawn1.png" style="width: 60px;"></div></div>
+    
+    <div class="ordbox1" style="top:566px;left:367px;"></div>
+    <div class="ordbox1" style="top:566px;left:427px;"></div>
+    <div class="ordbox1" style="top:566px;left:487px;"></div>
 
+    <div class="ordbox1" style="top:626px;left:367px;"></div>
+    <div class="brownbox" style="top:626px;left:427px;"></div>
+    <div class="brownbox" style="top:626px;left:487px;"></div>
+
+    <div class="ordbox1" style="top:686px;left:367px;"></div>
+    <div class="brownbox" style="top:686px;left:427px;"></div>
+    <div class="ordbox1" style="top:686px;left:487px;"></div>
+
+    <div class="ordbox1" style="top:746px;left:367px;"></div>
+    <div class="brownbox" style="top:746px;left:427px;"></div>
+    <div class="ordbox1" style="top:746px;left:487px;"></div>
+
+    <div class="ordbox1" style="top:806px;left:367px;"></div>
+    <div class="brownbox" style="top:806px;left:427px;"></div>
+    <div class="ordbox1" style="top:806px;left:487px;"></div>
+
+    <div class="ordbox1" style="top:866px;left:367px;"></div>
+    <div class="brownbox" style="top:866px;left:427px;"></div>
+    <div class="ordbox1" style="top:866px;left:487px;"></div>
+
+
+    <div class="ordbox1" style="top:927px;left:6px;"></div>
+    <div class="ordbox1" style="top:987px;left:6px;"></div>
+    <div class="ordbox1" style="top:1047px;left:6px;"></div>
+
+    <div class="redbox" style="top:927px;left:66px;"></div>
+    <div class="redbox" style="top:987px;left:66px;"></div>
+    <div class="ordbox1" style="top:1047px;left:66px;"></div>
+
+    <div class="ordbox1" style="top:927px;left:126px;"></div>
+    <div class="redbox" style="top:987px;left:126px;"></div>
+    <div class="ordbox1" style="top:1047px;left:126px;"></div>
+
+    <div class="ordbox1" style="top:927px;left:186px;"></div>
+    <div class="redbox" style="top:987px;left:186px;"></div>
+    <div class="ordbox1" style="top:1047px;left:186px;"></div>
+
+    <div class="ordbox1" style="top:927px;left:246px;"></div>
+    <div class="redbox" style="top:987px;left:246px;"></div>
+    <div class="ordbox1" style="top:1047px;left:246px;"></div>
+
+    <div class="ordbox1" style="top:927px;left:306px;"></div>
+    <div class="redbox" style="top:987px;left:306px;"></div>
+    <div class="ordbox1" style="top:1047px;left:306px;"></div>
+
+
+    <div class="ordbox1" style="top:927px;left:548px;"></div>
+    <div class="greybox" style="top:987px;left:548px;"></div>
+    <div class="ordbox1" style="top:1047px;left:548px;"></div>
+
+    <div class="ordbox1" style="top:927px;left:608px;"></div>
+    <div class="greybox" style="top:987px;left:608px;"></div>
+    <div class="ordbox1" style="top:1047px;left:608px;"></div>
+
+    <div class="ordbox1" style="top:927px;left:668px;"></div>
+    <div class="greybox" style="top:987px;left:668px;"></div>
+    <div class="ordbox1" style="top:1047px;left:668px;"></div>
+
+    <div class="ordbox1" style="top:927px;left:728px;"></div>
+    <div class="greybox" style="top:987px;left:728px;"></div>
+    <div class="ordbox1" style="top:1047px;left:728px;"></div>
+
+    <div class="ordbox1" style="top:927px;left:788px;"></div>
+    <div class="greybox" style="top:987px;left:788px;"></div>
+    <div class="greybox" style="top:1047px;left:788px;"></div>
+
+    <div class="ordbox1" style="top:927px;left:848px;width:57px;"></div>
+    <div class="ordbox1" style="top:987px;left:848px;width: 57px;"></div>
+    <div class="ordbox1" style="top:1047px;left:848px;width: 57px;;"></div>
+
+
+    <div class="ordbox1" style="top:1108px;left:367px;"></div>
+    <div class="purplebox" style="top:1108px;left:427px;"></div>
+    <div class="ordbox1" style="top:1108px;left:487px;"></div>
+
+    <div class="ordbox1" style="top:1168px;left:367px;"></div>
+    <div class="purplebox" style="top:1168px;left:427px;"></div>
+    <div class="ordbox1" style="top:1168px;left:487px;"></div>
+
+    <div class="ordbox1" style="top:1228px;left:367px;"></div>
+    <div class="purplebox" style="top:1228px;left:427px;"></div>
+    <div class="ordbox1" style="top:1228px;left:487px;"></div>
+
+    <div class="ordbox1" style="top:1288px;left:367px;"></div>
+    <div class="purplebox" style="top:1288px;left:427px;"></div>
+    <div class="ordbox1" style="top:1288px;left:487px;"></div>
+
+    <div class="purplebox" style="top:1348px;left:367px;"></div>
+    <div class="purplebox" style="top:1348px;left:427px;"></div>
+    <div class="ordbox1" style="top:1348px;left:487px;"></div>
+
+    <div class="ordbox1" style="top:1408px;left:367px;"></div>
+    <div class="ordbox1" style="top:1408px;left:427px;"></div>
+    <div class="ordbox1" style="top:1408px;left:487px;"></div>
+
+    <canvas id="goal" width="180px" height="180px" style="z-index:3;outline:3px solid black;position:absolute;top:929px;left:368px;"></canvas>
+    <script>
+        var c=document.getElementById("goal");
+        var ctx=c.getContext("2d");
+        ctx.beginPath();
+        ctx.moveTo(0,0);
+        ctx.lineTo(90,90);
+        ctx.lineTo(0,180);
+        ctx.fillStyle="#f85772";
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(0,0);
+        ctx.lineTo(90,90);
+        ctx.lineTo(180,0);
+        ctx.fillStyle="#b97a56";
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(180,180);
+        ctx.lineTo(90,90);
+        ctx.lineTo(180,0);
+        ctx.fillStyle="#4e4e4e";
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(180,180);
+        ctx.lineTo(90,90);
+        ctx.lineTo(0,180);
+        ctx.fillStyle="rgb(189, 25, 189)";
+        ctx.fill();
+        ctx.stroke();
+    </script>
 
     <h4 id="uselesstext1">It`s </h4><h3 id="player" style="float:left; color:red">red</h3><h4 id="uselesstext2">s turn</h4>
     <p id="badtext" style="float:left;"></p>
     </div>
-    <footer title="Copyright by Slavi Koen" id="copyright">FOR ME</footer>
     <script defer src="src/index.js" charset="utf-8"></script>
     <script>
         var currPos = 0;
-        var step = 67.5;
+        var step = 60;
         var currcolor = "";
         var NumOfPaw = "";
         var num = 0;
         var clicked = false;
         var currpawn = "";
         var allcolor = ["red", "blue", "green", "yellow"];
+        var safetop = [654,894,1014,1254]
+        var safeleft = [369,729,129,489]
         var pawnOut = {red:0,blue:0,green:0,yellow:0}
         function HaveHover() {
             var count = 0;
             var toKill = "";
             for (var i = 0; i < allcolor.length; i++) {
                 for (var n = 1; n <= 4; n++) {
-                    var firstPawn = document.getElementById(allcolor[i] + "pawn" + n);
-                    var secondPawn=document.getElementById(currpawn);
-                    if (firstPawn.style.top==secondPawn.style.top&&firstPawn.style.left==secondPawn.style.left&&currcolor!=allcolor[i]&&currPos+num<44) {
-                        count++;
-                        toKill = allcolor[i] + "pawn" + n;
-                        return toKill;
+                    for (var j=0; j<=3; j++) {
+                        var firstPawn = document.getElementById(allcolor[i] + "pawn" + n);
+                        var secondPawn=document.getElementById(currpawn);
+                        if (firstPawn.style.top==secondPawn.style.top&&firstPawn.style.left==secondPawn.style.left&&currcolor!=allcolor[i]&&currPos+num<44&&firstPawn.style.top!=safetop[j]&&firstPawn.style.left!=safeleft[j]) {
+                            count++;
+                            toKill = allcolor[i] + "pawn" + n;
+                            return toKill;
+                        }
                     }
                 }
             }
@@ -117,7 +454,6 @@
                     badtext.innerText = "Unfortunatlly you stuck";
                     clicked = false;
                     var dice = document.getElementById('dice');
-                    dice.style.backgroundImage = "url(https://www.animatedimages.org/data/media/710/animated-dice-image-0005.gif)";
                     window.setTimeout(changePlayer, 1000);
                 }
             }
@@ -135,7 +471,6 @@
             var badtext = document.getElementById('badtext');
             badtext.innerText = "";
             var dice = document.getElementById('dice');
-            dice.style.backgroundImage = "url(https://www.animatedimages.org/data/media/710/animated-dice-image-0005.gif)";
         }
         var positions = {
             redpawn1: 0, redpawn2: 0, redpawn3: 0, redpawn4: 0,
@@ -193,6 +528,38 @@
             doc.style.left = (curr + step) + 'px';
             currPos++;
         }
+        function topright() {
+            var doc = document.getElementById(currpawn);
+            var curr1 = Number(doc.style.left.replace(/[a-z]/g, ''));
+            var curr2 = Number(doc.style.top.replace(/[a-z]/g, ''));
+            doc.style.left = (curr1 + step) + 'px';
+            doc.style.top = (curr2 + step) + 'px';
+            currPos++;
+        }
+        function rightbot() {
+            var doc = document.getElementById(currpawn);
+            var curr1 = Number(doc.style.left.replace(/[a-z]/g, ''));
+            var curr2 = Number(doc.style.top.replace(/[a-z]/g, ''));
+            doc.style.left = (curr1 - step) + 'px';
+            doc.style.top = (curr2 + step) + 'px';
+            currPos++;
+        }
+        function botleft() {
+            var doc = document.getElementById(currpawn);
+            var curr1 = Number(doc.style.left.replace(/[a-z]/g, ''));
+            var curr2 = Number(doc.style.top.replace(/[a-z]/g, ''));
+            doc.style.left = (curr1 - step) + 'px';
+            doc.style.top = (curr2 - step) + 'px';
+            currPos++;
+        }
+        function lefttop() {
+            var doc = document.getElementById(currpawn);
+            var curr1 = Number(doc.style.left.replace(/[a-z]/g, ''));
+            var curr2 = Number(doc.style.top.replace(/[a-z]/g, ''));
+            doc.style.left = (curr1 + step) + 'px';
+            doc.style.top = (curr2-step)+'px';
+            currPos++;
+        }
         var stepsRed = [];
         var stepsYellow = [];
         var stepsBlue =[];
@@ -202,61 +569,77 @@
         }
         //Red pawns path
         pushSteps(stepDown,stepsRed,4);
-        pushSteps(stepRight, stepsRed,6);
+        pushSteps(topright, stepsRed,1);
+        pushSteps(stepRight, stepsRed,5);
         pushSteps(stepDown, stepsRed,2);
         pushSteps(stepLeft, stepsRed,5);
-        pushSteps(stepDown, stepsRed,6);
+        pushSteps(rightbot, stepsRed,1);
+        pushSteps(stepDown, stepsRed,5);
         pushSteps(stepLeft, stepsRed,2);
         pushSteps(stepUp, stepsRed,5);
-        pushSteps(stepLeft, stepsRed,6);
+        pushSteps(botleft, stepsRed,1);
+        pushSteps(stepLeft, stepsRed,5);
         pushSteps(stepUp, stepsRed,2);
         pushSteps(stepRight, stepsRed,5);
-        pushSteps(stepUp, stepsRed,6);
+        pushSteps(lefttop, stepsRed,1);
+        pushSteps(stepUp, stepsRed,5);
         pushSteps(stepRight, stepsRed,1);
         pushSteps(stepDown, stepsRed,6);
         //Yellow pawns path
 
         pushSteps(stepUp, stepsYellow,4);
-        pushSteps(stepLeft, stepsYellow,6);
+        pushSteps(botleft, stepsYellow,1);
+        pushSteps(stepLeft, stepsYellow,5);
         pushSteps(stepUp, stepsYellow,2);
         pushSteps(stepRight, stepsYellow,5);
-        pushSteps(stepUp, stepsYellow,6);
+        pushSteps(lefttop, stepsYellow,1);
+        pushSteps(stepUp, stepsYellow,5);
         pushSteps(stepRight, stepsYellow,2);
         pushSteps(stepDown, stepsYellow,5);
-        pushSteps(stepRight, stepsYellow,6);
+        pushSteps(topright, stepsYellow,1);
+        pushSteps(stepRight, stepsYellow,5);
         pushSteps(stepDown, stepsYellow,2);
         pushSteps(stepLeft, stepsYellow,5);
-        pushSteps(stepDown, stepsYellow,6);
+        pushSteps(rightbot, stepsYellow,1);
+        pushSteps(stepDown, stepsYellow,5);
         pushSteps(stepLeft, stepsYellow,1);
         pushSteps(stepUp, stepsYellow,6);
 
         //Blue pawns path
         pushSteps(stepLeft, stepsBlue,4);
-        pushSteps(stepDown, stepsBlue,6);
+        pushSteps(rightbot, stepsBlue,1);
+        pushSteps(stepDown, stepsBlue,5);
         pushSteps(stepLeft, stepsBlue,2);
         pushSteps(stepUp, stepsBlue,5);
-        pushSteps(stepLeft, stepsBlue,6);
+        pushSteps(botleft, stepsBlue,1);
+        pushSteps(stepLeft, stepsBlue,5);
         pushSteps(stepUp, stepsBlue,2);
         pushSteps(stepRight, stepsBlue,5);
-        pushSteps(stepUp, stepsBlue,6);
+        pushSteps(lefttop, stepsBlue,1);
+        pushSteps(stepUp, stepsBlue,5);
         pushSteps(stepRight, stepsBlue,2);
         pushSteps(stepDown, stepsBlue,5);
-        pushSteps(stepRight, stepsBlue,6);
+        pushSteps(topright, stepsBlue,1);
+        pushSteps(stepRight, stepsBlue,5);
         pushSteps(stepDown, stepsBlue,1);
         pushSteps(stepLeft, stepsBlue,6);
 
         //Green pawns path
         pushSteps(stepRight, stepsGreen,4);
-        pushSteps(stepUp, stepsGreen,6);
+        pushSteps(lefttop, stepsGreen,1);
+        pushSteps(stepUp, stepsGreen,5);
         pushSteps(stepRight, stepsGreen,2);
         pushSteps(stepDown, stepsGreen,5);
-        pushSteps(stepRight, stepsGreen,6);
+        pushSteps(topright, stepsGreen,1);
+        pushSteps(stepRight, stepsGreen,5);
         pushSteps(stepDown, stepsGreen,2);
         pushSteps(stepLeft, stepsGreen,5);
-        pushSteps(stepDown, stepsGreen,6);
+        pushSteps(rightbot, stepsGreen,1);
+        pushSteps(stepDown, stepsGreen,5);
         pushSteps(stepLeft, stepsGreen,2);
         pushSteps(stepUp, stepsGreen,5);
-        pushSteps(stepLeft, stepsGreen,6);
+        pushSteps(botleft, stepsGreen,1);
+        pushSteps(stepLeft, stepsGreen,5);
         pushSteps(stepUp, stepsGreen,1);
         pushSteps(stepRight, stepsGreen, 6);
         function ResetPawn(victim) {
@@ -285,9 +668,10 @@
         }
         function randomNum() {
             if (!clicked) {
-                num = Math.floor((Math.random() * 6) + 1);;
                 var dice = document.getElementById('dice');
-                dice.style.backgroundImage = "url(dice" + num + ".png)";
+                dice.style.backgroundImage = "url(dicerot.gif)";
+                num = Math.floor((Math.random() * 6) + 1);
+                setTimeout(function() { dice.style.backgroundImage = "url(dice" + num + ".png)"; }, 500);
                 clicked = true;
             }
             if (num != 6&&DontHaveOtherFree()) {
@@ -314,56 +698,71 @@
                             if (onboard[currpawn] === 0) {
                                 var doc = document.getElementById(currpawn);
                                 var curr = Number(doc.style.left.replace(/[a-z]/g, ''));
+                                var x = document.getElementById("myAudio"); 
+                                x.play();
+                                x.playbackRate = 2;
                                 switch (Color) {
+                                    case "green":
+                                        doc.style.left = 69 + 'px';
+                                        doc.style.top = 894 + "px";
+                                        break;
+
                                     case "red":
-                                        doc.style.left = 553 + 'px';
-                                        doc.style.top = 480 + "px";
+                                        doc.style.left = 489 + 'px';
+                                        doc.style.top = 594 + "px";
                                         break;
 
                                     case "yellow":
-                                        doc.style.left = 219 + 'px';
-                                        doc.style.top = 523 + "px";
+                                        doc.style.left = 369 + 'px';
+                                        doc.style.top = 1314 + "px";
                                         break;
 
                                     case "blue":
-                                        doc.style.left = 516 + 'px';
-                                        doc.style.top = 325 + "px";
-                                        break;
-
-                                    case "green":
-                                        doc.style.left = 21 + 'px';
-                                        doc.style.top = 226 + "px";
+                                        doc.style.left = 789 + 'px';
+                                        doc.style.top = 1014 + "px";
                                         break;
                                 }
                                 onboard[currpawn] = 1;
                             }
                             else {
+                                var x = document.getElementById("myAudio"); 
                                 switch (Color) {
                                     case "red":
                                         for (i = currPos; i < position + num; i++) {
                                             stepsRed[i]();
+                                            positions[currpawn] = currPos;
+                                            x.play();
+                                            x.playbackRate = 2;
                                         }
                                         break;
 
                                     case "yellow":
                                         for (i = currPos; i < position + num; i++) {
                                             stepsYellow[i]();
+                                            positions[currpawn] = currPos;
+                                            x.play();
+                                            x.playbackRate = 2;
                                         }
                                         break;
 
                                     case "blue":
                                         for (i = currPos; i < position + num; i++) {
                                             stepsBlue[i]();
+                                            positions[currpawn] = currPos;
+                                            x.play();
+                                            x.playbackRate = 2;
                                         }
                                         break;
 
                                     case "green":
                                         for (i = currPos; i < position + num; i++) {
                                             stepsGreen[i]();
+                                            positions[currpawn] = currPos;
+                                            x.play();
+                                            x.playbackRate = 2;
                                         }
                                         break;
                                 }
-                                positions[currpawn] = currPos;
                                 var victim = HaveHover();
                                 if (victim != false) {
                                     ResetPawn(victim);
@@ -374,8 +773,7 @@
                             }
                             num = 0;
                             clicked = false;
-                            var dice = document.getElementById('dice');
-                            dice.style.backgroundImage = "url(https://www.animatedimages.org/data/media/710/animated-dice-image-0005.gif)";
+                            
                         }
                         else Stuck();
                     }
